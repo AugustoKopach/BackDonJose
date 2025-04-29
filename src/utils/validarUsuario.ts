@@ -5,10 +5,10 @@ export const validarEmail = (email: string): boolean => {
   return emailRegex.test(email);
 };
 
-export const validarNombreUsuario = (nombreUsuario: string): boolean => {
+export function validarNombreUsuario(nombreUsuario: string | undefined): boolean {
+  if (!nombreUsuario) return false;
   return nombreUsuario.trim().length > 0;
-};
-
+}
 export const validarContrasenia = (contrasenia: string): boolean => {
   const contraseniaRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
   return contraseniaRegex.test(contrasenia);

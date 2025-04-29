@@ -5,7 +5,7 @@ import { Usuario } from '../model/Usuario';
 
 const router = express.Router();
 
-router.post('/usuario', (req: Request, res: Response) => {
+router.post('/registrarse', (req: Request, res: Response) => {
   const nuevoUsuario: Usuario = { ...req.body, id: uuidv4(), roles: req.body.roles || ['usuario'] };
   const resultado = crearUsuario(nuevoUsuario);
 
